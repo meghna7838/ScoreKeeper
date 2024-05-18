@@ -25,24 +25,9 @@
             score=score+2;
             rootElement.render(<App/>);
         }
-        let addThree=()=>{
-            alert("3 run added");
-            score=score+3;
-            rootElement.render(<App/>);
-        }
-        let addFour=()=>{
-            alert("4 run added");
-            score=score+4;
-            rootElement.render(<App/>);
-        }
-        let addFive=()=>{
-            alert("5 run added");
-            score=score+5;
-            rootElement.render(<App/>);
-        }
-        let addSix=()=>{
-            alert("6 run added");
-            score=score+6;
+        let addScore=(sum)=>{
+            alert(`${sum} run added`);
+            score=score+sum;
             rootElement.render(<App/>);
         }
         let takeWicket=()=>{
@@ -57,10 +42,10 @@
                 <h2> Score : {score}/{wicket}</h2>
                 <button onClick={addOne}>1</button>
                 <button onClick={addTwo}>2</button>
-                <button onClick={addThree}>3</button>
-                <button onClick={addFour}>4</button>
-                <button onClick={addFive}>5</button>
-                <button onClick={addSix}>6</button>
+                <button onClick={()=>addScore(3)}>3</button>
+                <button onClick={()=>addScore(4)}>4</button>
+                <button onClick={()=>addScore(5)}>5</button>
+                <button onClick={()=>addScore(6)}>6</button>
                 <button onClick={takeWicket}>Wicket</button>
                 </>
             );
